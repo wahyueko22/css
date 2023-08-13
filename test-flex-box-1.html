@@ -1,0 +1,139 @@
+<html>
+  <head>
+    <style>
+      :root{
+        /* https://www.quackit.com/css/flexbox/tutorial/create_a_website_layout_with_flexbox.cfm */
+      }
+
+      *{
+          box-sizing: border-box; /* include padding and border as part of width and height*/
+      }
+
+      body{
+        font-family: Arial, Helvetica, sans-serif; /* provide some option for font */
+        padding: 10px;
+        background-color: aqua;
+        justify-content: center;
+        display: flex; 
+        flex-direction: column; /*This tells the browser to display the items in a vertical column. */
+      }
+
+      .body-container{
+        max-width: 1200px;
+        width: 1200px;
+        margin: 0 auto; /* Center the container horizontally */
+        padding: 20px;
+        background-color: #14aa52; /* Set the background color you want */
+        border-radius: 20px; /* Add some rounded corners for style */
+        display: flex; 
+        flex-direction: column;
+      }
+
+      header{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background-color: bisque;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      nav li {
+        margin-right: 20px;
+      }
+      
+      nav a {
+        color: #4e2525;
+        text-decoration: none;
+      }
+
+      .main-content {
+        display: flex;
+        flex-direction: row;
+        gap: 25px;
+        padding: 20px;
+        flex: 1;
+      }
+      
+      .sidebar {
+        flex: 1;
+        background-color: #f0f0f0;
+        padding: 10px;
+      }
+      
+      .content {
+        flex: 3;
+        background-color: #fff;
+        padding: 20px;
+      }
+      
+      footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="body-container">
+      <header>
+          <h1> Welcome To Jungle </h1>
+          <nav>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </nav>
+      </header>
+      <section class="main-content">
+        <aside class="sidebar">
+          <h2>Sidebar</h2>
+          <ul>
+            <li><a href="#">Link 1</a></li>
+            <li><a href="#">Link 2</a></li>
+            <li><a href="#">Link 3</a></li>
+          </ul>
+        </aside>
+        <article class="content">
+          <h2>Article Title</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+        </article>
+      </section>
+      <footer>
+        <p>&copy; 2023 Company Name. All rights reserved.</p>
+      </footer>
+    </div>
+  </body>
+  </html>
