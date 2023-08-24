@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Gray - Profile - SocialBook.com</title>
+    <script src="https://kit.fontawesome.com/bf2313f3e5.js" crossorigin="anonymous"></script>
+    <style>
+        /* This code sets some initial styling rules for all elements on a web page using the universal selector '*' */
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "poppins", sans-serif;
+            box-sizing: border-box;
+        }
+          
+           /* This CSS code snippet defines CSS custom properties (also known as CSS variables) within the */
+        :root {
+            --body-color: #efefef;
+            --nav-color: #1876f2;
+            --bg-color: #fff;
+        }
+
+        .dark-theme {
+            --body-color: #0a0a0a;
+            --nav-color: #000;
+            --bg-color: #000;
+          }
+
+        body {
+            background: var(--body-color); /* refer to --body-color from root block */
+            transition: background 0.3s; /* This line applies a transition effect */
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            background: var(--nav-color);
+            padding: 5px 5%;
+            position: sticky; /* The position: sticky; CSS property is used to make an element behave as if it's relatively positioned until it reaches a certain scroll position on the page.*/
+            top: 0;
+            z-index: 100; /*The higher the z-index value, the closer the element is to the top of the stacking order */
+        }
+
+        .nav-left{
+            display: flex;
+            align-items: center; /* The align-items property is used in CSS to control the alignment of flex items along the cross axis of a flex container */
+            flex: 1;
+        }
+        .nav-right {
+            display: flex;
+            align-items: center; /* The align-items property is used in CSS to control the alignment of flex items along the cross axis of a flex container */
+            justify-content: flex-end;
+            flex: 1;
+        }
+
+        .logo{
+            width: 40px;
+            height: 40px;
+            margin-right: 20px;
+          }
+
+        .nav-left ul li {
+            list-style: none;
+            display: inline-block; /* CSS property is used to make an element behave like an inline element but retain the block-level properties like width, height, margins, and padding */
+        }
+        .nav-left ul li img {
+            width: 28px; /* force the width of image is 28 px*/
+            margin: 0px 15px;
+        }
+        .nav-user-icon img {
+            width: 40px;
+            border-radius: 50%; /* making rounded image*/
+            cursor: pointer;
+        }
+        .nav-user-icon {
+            margin-left: 30px;
+        }
+
+        .search-box {
+            background: #efefef;
+            width: 350px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center; /* Flex items are centered along the cross-axis. */
+            padding: 0 15px;
+        }
+        .search-box img {
+            width: 18px;
+        }
+        .search-box input {
+            width: 100%;
+            background: transparent; /*This makes the background of the input element transparent */
+            padding: 10px;
+            outline: none;
+            border: 0;
+        }
+
+        .online {
+            position: relative;
+          }
+        .online::after { /*pseudo-element to create a small indicator circle that signifies an online status*/
+            content: " ";
+            width: 7px;
+            height: 7px;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            background: #41db51;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .user-profile {
+            display: flex;
+            align-items: center;
+          }
+        .user-profile img {
+            width: 45px;
+            border-radius: 50%;
+            margin-right: 10px;
+          }
+        .user-profile p {
+            margin-bottom: -5px;
+            font-weight: 500;
+            color: #626262;
+          }
+        .user-profile small {
+            font-size: 12px;
+          }
+        
+        .settings-menu {
+            position: absolute; /*property is used to position an element in relation to its nearest positioned ancestor or to the containing block (usually the entire viewport or an element with a position other than static). */
+            width: 90%;
+            max-width: 350px;
+            background: var(--bg-color);
+            box-shadow: 0, 0, 10px rgba(0, 0, 0, 0.4);
+            border-radius: 4px;
+            overflow: hidden;
+            top: -30%;
+            margin: 70px 0px;
+            max-height: 0;
+            transition: max-height 0.3s;
+          }
+        .settings-menu-height {
+            max-height: 450px;
+          }
+        .user-profile a {
+            font-size: 12px;
+            color: #1876f2;
+            text-decoration: none;
+          }
+        .settings-menu-inner {
+            padding: 20px;
+          }
+        .settings-menu hr {
+            border: 0;
+            height: 1px;
+            background: #9a9a9a;
+            margin: 15px 0;
+          }
+        .setting-links {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+          }
+        .setting-links .settings-icon {
+            width: 38px;
+            margin-right: 10px;
+            border-radius: 50%;
+          }
+        .setting-links a {
+            display: flex;
+            flex: 1;
+            align-items: center;
+            justify-content: space-between;
+            text-decoration: none;
+            color: #626262;
+          }
+        #dark-btn {
+            position: absolute; 
+            top: 20px;
+            right: 20px;
+            background: #ccc;
+            width: 45px;
+            border-radius: 15px;
+            padding: 2px 3px;
+            cursor: pointer;
+            display: flex;
+            transition: padding-left 0.5s, background 0.5s;
+          }
+        #dark-btn span {
+            width: 18px;
+            height: 18px;
+            background: #fff;
+            border-radius: 50%;
+            display: inline-block; /* property is used to make an element behave as an inline-level block container. This means the element sits inline with surrounding content, but it also allows you to set a width, height, margins, and padding – properties that are typically associated with block-level elements*/
+          }
+        #dark-btn.dark-btn-on {
+            padding-left: 23px;
+            background: #0a0a0a;
+            border: 1px solid #ccc;
+          }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-left">
+            <a href="index.html"> <img src="images/fb-logo2.png" class="logo" alt="Logo"> </a>
+            <ul>
+                <li><img src="images/notification.png" alt=""></li>
+                <li><img src="images/message1.png" alt=""></li>
+                <li><img src="images/vidio-image.png" alt=""></li>
+            </ul>
+
+        </div>
+        <div class="nav-right">
+            <div class="search-box">
+                <img src="images/search.png" alt="">
+                <input type="text" placeholder="Search">
+
+            </div>
+            <div class="nav-user-icon online" onclick="settingsMenutoggle()">
+                <img src="images/profile-person.png" alt="">
+
+            </div>
+            <!------------------- Sttings-menu----------------------->
+
+            <div class="settings-menu">
+                <div id="dark-btn">
+                    <span> </span>
+                </div>
+                <div class="settings-menu-inner">
+                    <div class="user-profile">
+                        <img src="images/profile-person.png" alt="">
+                        <div>
+                            <p>John Gray</p>
+                            <a href="profile.html">See your profile</a>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="user-profile">
+                        <img src="images/feedback.png" alt="">
+                        <div>
+                            <p>Give feedback</p>
+                            <a href="mailto:rohitjha242@gmail.com">help me to improve this website</a>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="setting-links">
+                        <img src="images/setting.png" class="settings-icon" alt="">
+                        <a href="#">Settings and Privacy <img src="images/arrow.png" width="10px"></a>
+
+                    </div>
+                    <div class="setting-links">
+                        <img src="images/help.png" class="settings-icon" alt="">
+                        <a href="#">Help and Support <img src="images/arrow.png" width="10px"></a>
+
+                    </div>
+                    <div class="setting-links">
+                        <img src="images/display.png" class="settings-icon" alt="">
+                        <a href="#">Display and Accessibility <img src="images/arrow.png" width="10px"></a>
+
+                    </div>
+                    <div class="setting-links">
+                        <img src="images/logout.png" class="settings-icon" alt="">
+                        <a href="#">Logout <img src="images/arrow.png" width="10px"></a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+    </nav>
+    <!-- --------------------------Navigation Bar Ends ----------------------------->
+
+    <script>
+
+        var settingsmenu = document.querySelector(".settings-menu");
+        var darkBtn = document.getElementById("dark-btn");
+
+        function settingsMenutoggle(){
+            settingsmenu.classList.toggle("settings-menu-height");
+        }
+
+        darkBtn.onclick = function(){
+            darkBtn.classList.toggle("dark-btn-on");
+            document.body.classList.toggle("dark-theme");
+            if(localStorage.getItem("theme") == "light" ){
+                localStorage.setItem("theme", "dark");
+            }
+            else{
+                localStorage.setItem("theme", "light");
+            }
+        }
+
+        if(localStorage.getItem("theme") == "light"){
+            darkBtn.classList.remove("dark-btn-on");
+            document.body.classList.remove("dark-theme")
+
+        }
+        else if(localStorage.getItem("theme") == "dark"){
+            darkBtn.classList.add("dark-btn-on");
+            document.body.classList.add("dark-theme");
+        }
+        else{
+            localStorage.setItem("theme", "light");
+        }
+    </script>
+
+</body>
+</html>
